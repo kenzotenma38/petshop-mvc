@@ -1,0 +1,58 @@
+﻿@model RegisterViewModel
+<section class="login-tabs padding-large">
+    <div class="container my-5 py-5">
+        <div class="row">
+            <div class="tabs-listing">
+                <nav>
+                    <div class="nav nav-tabs d-flex justify-content-center border-dark-subtle mb-3" id="nav-tab"
+                         role="tablist">
+                        <button class="nav-link mx-3 fs-3 border-bottom border-dark-subtle border-0 text-uppercase"
+                                id="nav-register-tab" data-bs-toggle="tab" data-bs-target="#nav-register" type="button"
+                                role="tab" aria-controls="nav-register" aria-selected="false">
+                            Sign Up
+                        </button>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade active show" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
+                        <div class="col-lg-8 offset-lg-2 mt-5">
+
+                            <p class="mb-0">Or Sign-Up With Email</p>
+                            <hr class="my-1">
+
+                            <form method="post" class="form-group flex-wrap" enctype="multipart/form-data">
+                                <div class="form-input col-lg-12 my-4">
+
+                                    <input asp-for="FullName" 
+                                           placeholder="Your full name" class="form-control mb-3 p-4">
+                                    <input asp-for="Username"
+                                           placeholder="Username" class="form-control mb-3 p-4">
+                                           <span asp-validation-for="Username"></span>
+                                    <input asp-for="Email"
+                                           placeholder="Your email address" class="form-control mb-3 p-4">
+                                    <input asp-for="ProfileImage"
+                                           placeholder="profile image" class="form-control mb-3 p-4">
+                                    <span asp-validation-for="ProfileImage"></span>
+                                    <input asp-for="Password" placeholder="Set your password"
+                                           class="form-control mb-3 p-4" aria-describedby="passwordHelpBlock">
+                                          <span asp-validation-for="Password"></span>
+                                    <input asp-for="ConfirmPassword" placeholder="Retype your password"
+                                           class="form-control mb-3 p-4" aria-describedby="passwordHelpBlock">
+                                           <span asp-validation-for="ConfirmPassword"></span>
+                 
+
+                                    <div asp-validation-summary="ModelOnly"></div>
+                                    <div class="d-grid my-3">
+                                        <button type="submit" class="btn btn-dark btn-lg rounded-1">Sign Up</button>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

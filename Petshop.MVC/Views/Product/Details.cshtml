@@ -1,0 +1,298 @@
+﻿@model ProductViewModel
+<section id="selling-product">
+    <div class="container my-md-5 py-5">
+        <div class="row g-md-5">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- product-large-slider -->
+                        <div class="swiper product-large-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="~/images/@Model.CoverImageName" class="img-fluid" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <!-- product-thumbnail-slider -->
+                        <div thumbsSlider="" class="swiper product-thumbnail-slider">
+                            <div class="swiper-wrapper">
+                                @foreach (var item in Model.ImageNames)
+                                {
+                                    <div class="swiper-slide">
+                                        <img src="~/images/@item" class="img-fluid" />
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-6 mt-5 ">
+                <div class="product-info">
+                    <div class="element-header">
+                        <h2 itemprop="name" class="display-6">@Model.Name</h2>
+                        <div class="rating-container d-flex gap-0 align-items-center">
+                            <span class="rating secondary-font">
+                                <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                                <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                                <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                                <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                                <iconify-icon icon="clarity:star-solid" class="text-primary"></iconify-icon>
+                                5.0
+                            </span>
+                        </div>
+                    </div>
+                    <div class="product-price pt-3 pb-3">
+                        <strong class="text-primary display-6 fw-bold">$@Model.Price</strong><del class="ms-2">$240.00</del>
+                    </div>
+                    <p>
+                        @Model.Description
+                    </p>
+                    <div class="cart-wrap">
+                        <div class="color-options product-select">
+                            <div class="color-toggle pt-2" data-option-index="0">
+                                <h6 class="item-title fw-bold">Color:</h6>
+                                <ul class="select-list list-unstyled d-flex">
+                                    <li class="select-item pe-3" data-val="Gray" title="Gray">
+                                        <a href="#" class="btn btn-light active">Gray</a>
+                                    </li>
+                                    <li class="select-item pe-3" data-val="Black" title="Black">
+                                        <a href="#" class="btn btn-light">Black</a>
+                                    </li>
+                                    <li class="select-item pe-3" data-val="Blue" title="Blue">
+                                        <a href="#" class="btn btn-light">Blue</a>
+                                    </li>
+                                    <li class="select-item" data-val="Red" title="Red">
+                                        <a href="#" class="btn btn-light disabled">Red</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swatch product-select pt-3" data-option-index="1">
+                            <h6 class="item-title fw-bold">Size:</h6>
+                            <ul class="select-list list-unstyled d-flex">
+                                <li data-value="S" class="select-item pe-3">
+                                    <a href="#" class="btn btn-light">XL</a>
+                                </li>
+                                <li data-value="M" class="select-item pe-3">
+                                    <a href="#" class="btn btn-light active">L</a>
+                                </li>
+                                <li data-value="L" class="select-item pe-3">
+                                    <a href="#" class="btn btn-light">M</a>
+                                </li>
+                                <li data-value="L" class="select-item">
+                                    <a href="#" class="btn btn-light">S</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-quantity pt-2">
+                            <div class="stock-number text-dark"><em>2 in stock</em></div>
+                            <div class="stock-button-wrap">
+
+                                <div class="input-group product-qty align-items-center w-25">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-left-minus btn btn-light btn-number" data-type="minus">
+                                            <svg width="16" height="16">
+                                                <use xlink:href="#minus"></use>
+                                            </svg>
+                                        </button>
+                                    </span>
+                                    <input type="text" id="quantity" name="quantity"
+                                           class="form-control input-number text-center p-2 mx-1" value="1">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus"
+                                                data-field="">
+                                            <svg width="16" height="16">
+                                                <use xlink:href="#plus"></use>
+                                            </svg>
+                                        </button>
+                                    </span>
+                                </div>
+
+                                <div class="d-flex flex-wrap pt-4">
+                                    <a href="#" class="btn-cart me-3 px-4 pt-3 pb-3">
+                                        <h5 class="text-uppercase m-0">Add to Cart</h5>
+                                    </a>
+                                    <a href="#" class="btn-wishlist px-4 pt-3 ">
+                                        <iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meta-product pt-4">
+                        <div class="meta-item d-flex align-items-baseline">
+                            <h6 class="item-title fw-bold no-margin pe-2">SKU:</h6>
+                            <ul class="select-list list-unstyled d-flex">
+                                <li data-value="S" class="select-item">1223</li>
+                            </ul>
+                        </div>
+                        <div class="meta-item d-flex align-items-baseline">
+                            <h6 class="item-title fw-bold no-margin pe-2">Category:</h6>
+                            <ul class="select-list list-unstyled d-flex">
+                                <li data-value="S" class="select-item">
+                                    <a href="#">@Model.CategoryName</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="meta-item d-flex align-items-baseline">
+                            <h6 class="item-title fw-bold no-margin pe-2">Tags:</h6>
+                            <ul class="select-list list-unstyled d-flex">
+                                @foreach (var item in Model.TagNames)
+                                {
+                                    <li data-value="S" class="select-item">
+                                        <a href="#">@item</a>,
+                                    </li>
+                                }      
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="product-info-tabs py-md-5">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-column flex-md-row align-items-start gap-5">
+                <div class="nav flex-row flex-wrap flex-md-column nav-pills me-3 col-lg-3" id="v-pills-tab" role="tablist"
+                     aria-orientation="vertical">
+                    <button class="nav-link fs-5 mb-2 text-start active" id="v-pills-description-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-description" type="button" role="tab" aria-controls="v-pills-description"
+                            aria-selected="false" tabindex="-1">
+                        Description
+                    </button>
+                    <button class="nav-link fs-5 mb-2 text-start" id="v-pills-additional-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-additional" type="button" role="tab" aria-controls="v-pills-additional"
+                            aria-selected="false" tabindex="-1">
+                        Additional Information
+                    </button>
+                    <button class="nav-link fs-5 mb-2 text-start" id="v-pills-reviews-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-reviews" type="button" role="tab" aria-controls="v-pills-reviews"
+                            aria-selected="true">
+                        Customer Reviews
+                    </button>
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade active show" id="v-pills-description" role="tabpanel"
+                         aria-labelledby="v-pills-description-tab" tabindex="0">
+                        <h2>Product Description</h2>
+                        <p>
+                           @Model.Description
+                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-additional" role="tabpanel" aria-labelledby="v-pills-additional-tab"
+                         tabindex="0">
+                        @Model.AdditionalInformation
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-reviews" role="tabpanel" aria-labelledby="v-pills-reviews-tab"
+                         tabindex="0">
+                        <div class="review-box d-flex flex-wrap">
+                            @foreach (var item in Model.Reviews)
+                            {
+                                <div class="col-lg-6 d-flex flex-wrap gap-3">
+                                    <div class="col-md-2">
+                                        <div class="image-holder">
+                                            <img src="~/images/users/@item.AppUserProfileImageName" alt="review" class="img-fluid rounded-circle">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="review-content">
+                                            <div class="rating-container d-flex align-items-center">
+                                                @for(var i=0;i< Math.Ceiling(item.Rate); i++)
+                                                {
+                                                    <div class="rating" data-rating="@((i+1))">
+                                                        <svg width="24" height="24" class="text-primary">
+                                                            <use xlink:href="#star-solid"></use>
+                                                        </svg>
+                                                    </div>
+                                                }
+    
+                                                @for (var i = Math.Ceiling(item.Rate); i < 5; i++)
+                                                {
+                                                    <div class="rating" data-rating="@((i+1))">
+                                                        <svg width="24" height="24" class="text-secondary">
+                                                            <use xlink:href="#star-solid"></use>
+                                                        </svg>
+                                                    </div>
+                                                }
+                                                <span class="rating-count">(@item.Rate)</span>
+                                            </div>
+                                            <div class="review-header">
+                                                <span class="author-name">@(item.AppUserName==""?item.Name:item.AppUserName)</span>
+                                                <span class="review-date">– @item.CreatedAt</span>
+                                            </div>
+                                            <p>
+                                                @item.Description
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="add-review mt-5">
+                            <h3>Add a review</h3>
+                            <p>Your email address will not be published. Required fields are marked *</p>
+                            <form id="form" method="post" class="form-group" asp-action="addreview" asp-route-id="@Model.Id" enctype="multipart/form-data">
+                                <input type="hidden" name="ProductId" value="@Model.Id" />
+                                <div class="pb-3">
+                                    <div class="review-rating">
+                                        <span>Your rating *</span>
+                                        <div class="rating-container d-flex align-items-center">
+                                            <input type="number" min="1" max="5" value="1" name="Rate"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pb-3">
+                                    <input type="file" class="form-control" data-text="Choose your file" name="ImageFile">
+                                </div>
+                             
+                                @if(!User.Identity!.IsAuthenticated)
+                                {
+                                    <div class="pb-3">
+                                        <label>Your Name</label>
+                                        <input type="text" name="name" placeholder="Write your name here*" class="form-control">
+                                    </div>
+
+                                    <div class="pb-3">
+                                        <label>Your Email</label>
+                                        <input type="text" name="email" placeholder="Write your email here*" class="form-control">
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="pb-3">
+                                        <label>Your Name</label>
+                                        <input type="text" value="@User.Identity.Name" disabled name="name" placeholder="Write your name here*" class="form-control">
+                                    </div>
+
+                                    <div class="pb-3">
+                                        <label>Your Email</label>
+                                        <input type="text" value="@User.Claims.FirstOrDefault(x=>x.Type.Contains("email"))?.Value" disabled name="email" placeholder="Write your email here*" class="form-control">
+                                    </div>
+                                }
+
+                                <div class="pb-3">
+                                    <label>Your Review</label>
+                                    <textarea  name="description" class="form-control" placeholder="Write your review here*"></textarea>
+                                </div>
+                                <button type="submit" name="submit"
+                                        class="btn btn-dark btn-large text-uppercase w-100">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
